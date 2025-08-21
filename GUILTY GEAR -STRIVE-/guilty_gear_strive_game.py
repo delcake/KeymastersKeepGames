@@ -184,15 +184,15 @@ class GuiltyGearStriveGame(Game):
         return ("GGST Additional Character 15 - Venom" in self.dlc_owned or
                 self.has_dlc_season_4_character_pass)
     
-    #@property
-    #def has_dlc_character_unika(self) -> bool:
-    #    return ("GGST Additional Character 16 - Unika" in self.dlc_owned or
-    #            self.has_dlc_season_4_character_pass)
+    @property
+    def has_dlc_character_unika(self) -> bool:
+        return ("GGST Additional Character 16 - Unika" in self.dlc_owned or
+                self.has_dlc_season_4_character_pass)
     
-    #@property
-    #def has_dlc_character_lucy(self) -> bool:
-    #    return ("GGST Additional Character 17 - Lucy" in self.dlc_owned or
-    #            self.has_dlc_season_4_character_pass)
+    @property
+    def has_dlc_character_lucy(self) -> bool:
+        return ("GGST Additional Character 17 - Lucy" in self.dlc_owned or
+                self.has_dlc_season_4_character_pass)
 
     @functools.cached_property
     def characters_base(self) -> List[str]:
@@ -266,11 +266,11 @@ class GuiltyGearStriveGame(Game):
         if self.has_dlc_character_venom:
             characters.append("Venom")
 
-        #if self.has_dlc_character_unika:
-        #    characters.append("Unika")
+        if self.has_dlc_character_unika:
+            characters.append("Unika")
 
-        #if self.has_dlc_character_lucy:
-        #    characters.append("Lucy")
+        if self.has_dlc_character_lucy:
+            characters.append("Lucy")
 
         return characters
 
@@ -321,8 +321,8 @@ class GuiltyGearStriveDLCOwned(OptionSet):
         "GUILTY GEAR -STRIVE- Season Pass 4",
         "GGST Additional Character 14 - Queen Dizzy",
         "GGST Additional Character 15 - Venom",
-        #"GGST Additional Character 16 - Unika",
-        #"GGST Additional Character 17 - Lucy",
+        "GGST Additional Character 16 - Unika",
+        "GGST Additional Character 17 - Lucy",
     ]
 
     default = valid_keys
